@@ -8,9 +8,14 @@ describe("Prueba de jest", () => {
 
     })
 
-    test("Requerimiento 2: Fechas en atributos de User",() => {
-        const user = new User(1,"JosueEspino", "Josue" , "Bio")
+    test("Requerimiento 2: Fechas en atributos de User", () => {
+        const user = new User(1, "JosueEspino", "Josue" , "Bio")
         expect(user.dateCreated).not.toBeUndefined()
-        expect(user.lastUpdate.not.toBeUndefined()
+        expect(user.lastUpdate).not.toBeUndefined()
+    })
+
+    test("Requerimiento 3: Agregando Getters", ()=> {
+        const user = new User(1, "JosueEspino", "Josue" , "Bio")
+        expect(user.getUsername).toBe("JosueEspino")
     })
 })
