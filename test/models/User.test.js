@@ -17,12 +17,18 @@ describe("Prueba de jest", () => {
     test("Requerimiento 3: Agregando Getters", ()=> {
         const user = new User(1, "JosueEspino", "Josue" , "Bio")
         expect(user.getUsername).toBe("JosueEspino")
+        expect(user.getBio).toBe("Bio")
+        expect(user.getDateCreated).not.toBeUndefined()
+        expect(user.getLastUpdate).not.toBeUndefined()
     })
 
-    test("Requerimiento 4: agregando setters" , () =>{
+    test("Requerimiento 4: agregando Setters" , () =>{
         const user = new User(1, "JosueEspino", "Josue" , "Bio")
         user.setUsername = "JosueES"
         expect(user.username).toBe("JosueES")
+        
+        user.setBio = "New Bio"
+        expect(user.bio).toBe("New Bio")
 
     })
 })
